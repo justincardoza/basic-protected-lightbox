@@ -1,0 +1,130 @@
+/*
+Basic Protected Lightbox for WordPress: a minimal lightbox designed to work with
+WordPress's default gallery block and provide a small measure of protection from
+image theft by common means.
+
+Copyright (C) 2019 Justin Cardoza
+Full license is in gpl-2.0.txt
+Software originally from https://justincardoza.com/
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+.lightbox-overlay
+{
+	flex: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#lightbox
+{
+	display: none;
+	position: fixed;
+	z-index: 999999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	overflow: hidden;
+}
+
+#lightbox-content
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+#lightbox-left, #lightbox-right, #lightbox-close
+{
+	color: white;
+	background-color: rgba(0, 0, 0, 0.1);
+	font-size: 400%;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	z-index: 2;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#lightbox-left, #lightbox-right
+{
+	width: 1em;
+	height: 2em;
+	line-height: 2em;
+}
+
+#lightbox-close
+{
+	width: 1.25em;
+	height: 1.25em;
+	line-height: 1.25em;
+	position: fixed;
+	top: 0;
+	right: 0;
+	border-bottom-left-radius: 0.25em;
+}
+
+#lightbox-left
+{
+	margin-right: -1em;
+	border-top-right-radius: 0.25em;
+	border-bottom-right-radius: 0.25em;
+}
+
+#lightbox-right
+{
+	margin-left: -1em;
+	border-top-left-radius: 0.25em;
+	border-bottom-left-radius: 0.25em;
+}
+
+#lightbox-main
+{
+	margin: 0;
+}
+
+#lightbox-image
+{
+	max-width: 100vw;
+	max-height: 100vh;
+}
+
+/* Prevent the page being scrolled in the background when the lightbox is open. */
+body.lightbox-open
+{
+	overflow: hidden;
+}
+
+/* Reduce font size on the lightbox controls for mobile devices. */
+@media (max-width: 90ch)
+{
+	#lightbox-left, #lightbox-right, #lightbox-close
+	{
+		font-size: 250%;
+	}
+}
