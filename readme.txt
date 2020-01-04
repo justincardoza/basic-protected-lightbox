@@ -11,7 +11,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 A lightweight, simple lightbox with basic image protection capabilities.
 
 == Description ==
-This plugin provides a very lightweight, minimalist, jQuery-based lightbox for displaying full-screen versions of the images from WordPress galleries. It also gives some basic copy protection that should foil relatively unmotivated image thieves by inserting a transparent overlay over the lightbox and all gallery thumbnails. This will prevent people from copying images in your galleries via right-click or drag-and-drop. It's not a true preventative measure, in that someone who really wants to download copies of your images will most likely find a different way, but it is a little more secure than linking directly to the full resolution versions. Image copying is pretty much impossible to fully prevent aside from just not publishing your work in the first place; this plugin's goal is to strike a good middle ground.
+This plugin provides a very lightweight, minimalist, jQuery-based lightbox for displaying full-screen versions of the images from WordPress galleries. It also gives some basic copy protection that should foil relatively unmotivated image thieves by inserting a transparent overlay over the lightbox and all gallery thumbnails. This will prevent people from copying images in your galleries via right-click or drag-and-drop. It's not a true preventative measure, in that someone who really wants to download copies of your images will most likely find a different way, but it is a little more secure than linking directly to the full resolution versions. Image copying is pretty much impossible to fully prevent aside from just not publishing your work in the first place; my goal with this plugin is to find a good middle ground.
 
 Want to see it in action? Check out the [photos page](https://justincardoza.com/photos) on my personal website for a live demo.
 
@@ -35,9 +35,13 @@ If you want to display your portfolio of images on your website, but you want a 
 This lightbox has been tested with WordPress's built-in gallery block. If you're using a gallery plugin that generates the same markup structure, it should work just fine, but I can't guarantee compatibility with every gallery plugin. It can't hurt to try though! If you run into issues, please do reach out via the support forum for the plugin.
 
 == Changelog ==
+= 1.1 =
+Added keyboard controls and logic to hide the left/right buttons if they aren't needed.
 = 1.0 =
 Initial release.
 
 == Upgrade Notice ==
+= 1.1 =
+New usability improvements.
 = 1.0 =
 Give it a try! It only costs free fifty!

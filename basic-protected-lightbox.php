@@ -3,7 +3,7 @@
  * Plugin Name: Basic Protected lightbox
  * Plugin URI: https://justincardoza.com/software/basic-protected-lightbox
  * Description: A minimal lightbox with basic image protection capabilities.
- * Version: 1.0
+ * Version: 1.1
  * Author: Justin Cardoza
  * Author URI: https://justincardoza.com/
  * License: GPLv2 or later
