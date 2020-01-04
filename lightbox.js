@@ -127,6 +127,14 @@ jQuery(document).ready(function($)
 			currentGalleryImages = gallery.find('img:not(.lightbox-overlay)').map(function() { return this.src }).get();
 			currentImageIndex = currentGalleryImages.indexOf(currentImageUrl);
 			
+			//If there aren't multiple images in the gallery, hide the navigation buttons.
+			//This is useful if you want to display a single image but also enable the
+			//lightbox and copy protection.
+			if(currentGalleryImages.length < 2)
+				$('#lightbox-left, #lightbox-right').addClass('lightbox-button-hidden');
+			else
+				$('#lightbox-left, #lightbox-right').removeClass('lightbox-button-hidden');
+			
 			//Set the lightbox to display the correct image, then show the lightbox
 			//and prevent the document from scrolling behind it.
 			$('#lightbox-image').attr('src', currentImageUrl);
