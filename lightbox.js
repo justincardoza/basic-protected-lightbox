@@ -90,6 +90,17 @@ jQuery(document).ready(function($)
 	function nextImage() { setCurrentImage(currentImageIndex + 1); }
 	function previousImage() { setCurrentImage(currentImageIndex - 1); }
 	
+	//Handles page-wide keypresses to control the lightbox using the keyboard.
+	function handleKey(e)
+	{
+		if(e.which == 27) //Escape
+			closeLightbox();
+		else if(e.which == 37 && $('#lightbox').css('display') != 'none') //Left arrow
+			previousImage();
+		else if(e.which == 39 && $('#lightbox').css('display') != 'none') //Right arrow
+			nextImage();
+	}
+	
 	//If there are galleries on the current page, insert the lightbox elements,
 	//bind event listeners, and add transparent overlays on the gallery thumbnails.
 	if(galleries.length > 0)
@@ -114,6 +125,8 @@ jQuery(document).ready(function($)
 		$('#lightbox').on('touchstart', handleTouchStart);
 		$('#lightbox').on('touchmove', handleTouchMove);
 		$('#lightbox').on('touchend', handleTouchEnd);
+		
+		$(document).keydown(handleKey);
 		
 		//Add a transparent overlay to each thumbnail and bind an event listener to open
 		//the lightbox on that image when it's clicked or tapped.
